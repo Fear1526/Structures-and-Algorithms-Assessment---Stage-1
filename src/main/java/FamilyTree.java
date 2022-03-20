@@ -78,7 +78,7 @@ public class FamilyTree implements FamilyTreeADT {
     private boolean contains(String name, FamilyTreeNode currentNode) {
         if (currentNode.name.equalsIgnoreCase(name))                                // if current node is the target return true
             return true;
-        if (currentNode.partner != null && currentNode.partner.name == name)        // if current nodes partner is the target return true
+        if (currentNode.partner != null && currentNode.partner.name.equalsIgnoreCase(name))        // if current nodes partner is the target return true
             return true;
         boolean result = false;
         if (currentNode.firstChild != null)                             // if current nodes first child is not null
