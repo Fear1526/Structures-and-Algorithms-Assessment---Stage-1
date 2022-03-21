@@ -70,23 +70,24 @@ public class FamilyTree implements FamilyTreeADT {
     }
 
 
+
     // Code for junit tests
     public boolean contains(String name) {
-        return contains(name, this.ancestor);
+        return contains(name, this.ancestor);                   // returns result of checking all of the family tree
     }
 
     private boolean contains(String name, FamilyTreeNode currentNode) {
-        if (currentNode.name.equalsIgnoreCase(name))
+        if (currentNode.name.equalsIgnoreCase(name))                                // if current node is the target return true
             return true;
-        if (currentNode.partner != null && currentNode.partner.name == name)
+        if (currentNode.partner != null && currentNode.partner.name.equalsIgnoreCase(name))        // if current nodes partner is the target return true
             return true;
         boolean result = false;
-        if (currentNode.firstChild != null)
-            result = contains(name, currentNode.firstChild);
-        if (!result && currentNode.sibling != null)
-            result = contains(name, currentNode.sibling);
+        if (currentNode.firstChild != null)                             // if current nodes first child is not null
+            result = contains(name, currentNode.firstChild);            // method self calls with the first child
+        if (!result && currentNode.sibling != null)                     // if current nodes siblings is not null
+            result = contains(name, currentNode.sibling);               // method self calls with current nodes sibling
 
-        return result;
+        return result;          // returns result
     }
 
 }

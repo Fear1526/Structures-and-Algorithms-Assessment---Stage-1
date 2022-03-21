@@ -1,8 +1,9 @@
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThrows;
 import org.junit.jupiter.api.Test;
 
-class FamilyTreeUnitTest {
+class FamilyTreeUnitTests {
 
     private FamilyTree underTest;
 
@@ -67,5 +68,17 @@ class FamilyTreeUnitTest {
 
         // then
         assertTrue(expected);
+    }
+
+    @Test
+    void shouldThrowNotUniqueException(){
+        // given
+        underTest = new FamilyTree("James", "Mary");
+        underTest.addChild("Amy");
+
+        // then
+        assertThrows(FamilyTreeADT.NotUniqueSiblingException.class, () -> {
+            underTest.addChild("amy");
+        });
     }
 }
