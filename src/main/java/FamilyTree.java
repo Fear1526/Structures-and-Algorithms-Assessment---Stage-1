@@ -70,6 +70,7 @@ public class FamilyTree implements FamilyTreeADT {
     }
 
 
+
     // Code for junit tests
     public boolean contains(String name) {
         return contains(name, this.ancestor);                   // returns result of checking all of the family tree

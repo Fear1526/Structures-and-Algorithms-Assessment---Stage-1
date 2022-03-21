@@ -8,7 +8,7 @@ public class FamilyTreeTest {
             System.out.println("1: Add Child\n2: Display Family Tree\n0: Quit\n");
             option = getInteger();                                                              // get option
             switch (option) {                                                                   // check option
-                case 0 -> System.out.println("Closing Family Tree Application...");
+                case 0 -> System.out.println("Closing application...");
                 case 1 -> addChild(familyTree);
                 case 2 -> System.out.println(familyTree.toString());
                 default -> System.out.println("\nError: Invalid Option\n");
