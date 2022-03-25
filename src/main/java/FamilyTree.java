@@ -1,4 +1,4 @@
-public class FamilyTree implements FamilyTreeADT {
+public class FamilyTree implements FamilyTreeExceptions {
 
     private static class FamilyTreeNode {
         private String name;
@@ -20,7 +20,6 @@ public class FamilyTree implements FamilyTreeADT {
         this.ancestor.partner = ancestorPartner;
     }
 
-    @Override
     public void addChild(String childName) throws NotUniqueSiblingException {
         FamilyTreeNode newChild = new FamilyTreeNode();                 // Creates new node for the new child
         newChild.name = childName;

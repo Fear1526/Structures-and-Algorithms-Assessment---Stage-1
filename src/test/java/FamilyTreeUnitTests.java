@@ -77,7 +77,7 @@ class FamilyTreeUnitTests {
         underTest.addChild("Amy");
 
         // then
-        assertThrows(FamilyTreeADT.NotUniqueSiblingException.class, () -> {
+        assertThrows(FamilyTreeExceptions.NotUniqueSiblingException.class, () -> {
             underTest.addChild("amy");
         });
     }

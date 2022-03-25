@@ -31,7 +31,7 @@ public class FamilyTreeTest {
         String childName = Input.getString("Enter the child's name: ");     // gets name from user
         try {
             familyTree.addChild(childName);                                         // attempts to add child
-        } catch (FamilyTreeADT.NotUniqueSiblingException e) {                       // if name already exists displays error message
+        } catch (FamilyTreeExceptions.NotUniqueSiblingException e) {                       // if name already exists displays error message
             System.out.println("\nError: Child name not unique\n");
         }
     }
