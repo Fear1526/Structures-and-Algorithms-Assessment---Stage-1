@@ -10,7 +10,7 @@ public class FamilyTreeTest {
             switch (option) {                                                                   // check option
                 case 0 -> System.out.println("Closing application...");
                 case 1 -> addChild(familyTree);
-                case 2 -> System.out.println(familyTree.toString());
+                case 2 -> System.out.println(familyTree);
                 default -> System.out.println("\nError: Invalid Option\n");
             }
         } while (!option.equals(0));           // while option not 0
