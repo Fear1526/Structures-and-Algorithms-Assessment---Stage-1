@@ -56,7 +56,7 @@ class FamilyTreeUnitTests {
     }
 
     @Test
-    void toStringShouldHaveChildren() throws Exception{
+    void toStringShouldHaveChildren(){
         // given
         underTest = new FamilyTree("James", "Mary");
         underTest.addChild("John");
